@@ -43,4 +43,9 @@ public class MusicPlayer : MonoBehaviour
         mixer.SetFloat("Volume", value);
     }
 
+    public void PlayOneShot(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
+    }
+
 }

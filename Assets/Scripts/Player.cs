@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     public int ammoCount;
     public float fireCooldown = .5f;
 
+    public AudioClip fireSound;
+
     private Rigidbody2D rigidBody;
     private Vector2 velocity;
     private float currentCooldown;
@@ -75,6 +77,7 @@ public class Player : MonoBehaviour
             Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
             currentCooldown = Time.time;
             ammoCount--;
+            MusicPlayer._Instance.PlayOneShot(fireSound);
         }
     }
 

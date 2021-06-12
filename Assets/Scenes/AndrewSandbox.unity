@@ -15475,8 +15475,12 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7223273752375000148, guid: bcd2d227919f493448c5c05b3ad737f1, type: 3}
+      propertyPath: fireSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7acd582ca22bb394bb5558d8c927dc9d, type: 3}
+    - target: {fileID: 7223273752375000148, guid: bcd2d227919f493448c5c05b3ad737f1, type: 3}
       propertyPath: fireCooldown
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7223273754237947661, guid: bcd2d227919f493448c5c05b3ad737f1, type: 3}
       propertyPath: m_SortingOrder
