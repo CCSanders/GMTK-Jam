@@ -27,6 +27,7 @@ public class MenuManager : MonoBehaviour
     public void OnPlay()
     {
         audio.PlayOneShot(SelectBlip);
+        MusicPlayer._Instance.ChangeSong(1);
         SceneManager.LoadScene(1);
     }
 
@@ -68,5 +69,10 @@ public class MenuManager : MonoBehaviour
     {
         audio.clip = HoverBlip;
         audio.Play();
+    }
+
+    public void MusicVolume(float value)
+    {
+        MusicPlayer._Instance.Volume(value);
     }
 }
