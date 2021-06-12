@@ -88,4 +88,14 @@ public class ShadowClone : MonoBehaviour
         //print("Mouse position: " + mousePosition + ", angle: " + angle);
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 90f));
     }
+
+    public float GetCloneTimePercent()
+    {
+        return shadowCurrentCooldown / ShadowTime;
+    }
+
+    public bool GetIsActive()
+    {
+        return isActive;
+    }
 }

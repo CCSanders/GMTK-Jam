@@ -202,6 +202,10 @@ MonoBehaviour:
   moveSpeed: 5
   bulletSpawn: {fileID: 8601742339867489179}
   bullet: {fileID: 6597918125054577365, guid: dbff13c1894b4d549988237f43afc960, type: 3}
+  ammoCount: 50
+  fireCooldown: 0.1
+  clone: {fileID: 0}
+  fireSound: {fileID: 8300000, guid: 7acd582ca22bb394bb5558d8c927dc9d, type: 3}
 --- !u!1 &3819337820174632010
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +306,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -7383358896164918398, guid: 8537fdc9d60047f4bba128092671b84e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
