@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public GameObject bullet;
     public int ammoCount;
     public float fireCooldown = .5f;
+    public ShadowClone clone;
 
     public AudioClip fireSound;
 
@@ -75,9 +76,15 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0) && fireCooldown + currentCooldown < Time.time && ammoCount > 0)
         {
             Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
+            clone.ShadowFire();
             currentCooldown = Time.time;
             ammoCount--;
             MusicPlayer._Instance.PlayOneShot(fireSound);
+        }
+
+        if(Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            clone.EnableClone(transform.position);
         }
     }
 
