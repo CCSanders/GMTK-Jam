@@ -66,6 +66,7 @@ public class PauseManager : MonoBehaviour
     public void OnReturnToMenu()
     {
         audioSource.PlayOneShot(SelectBlip);
+        MusicPlayer._Instance.ChangeSong(0);
         SceneManager.LoadScene(0);
     }
 
@@ -73,5 +74,10 @@ public class PauseManager : MonoBehaviour
     {
         audioSource.clip = HoverBlip;
         audioSource.Play();
+    }
+
+    public void MusicVolume(float value)
+    {
+        MusicPlayer._Instance.Volume(value);
     }
 }
