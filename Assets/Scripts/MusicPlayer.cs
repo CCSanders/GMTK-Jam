@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class MusicPlayer : MonoBehaviour
 {
     public static MusicPlayer _Instance;
     public AudioClip[] songs;
+    public AudioMixer mixer;
     private AudioSource audioSource;
 
     // Start is called before the first frame update
@@ -34,6 +36,11 @@ public class MusicPlayer : MonoBehaviour
     public void Volume(float value)
     {
         audioSource.volume = value;
+    }
+
+    public void MasterVolume(float value)
+    {
+        mixer.SetFloat("Volume", value);
     }
 
 }

@@ -80,4 +80,9 @@ public class PauseManager : MonoBehaviour
     {
         MusicPlayer._Instance.Volume(value);
     }
+
+    public void MasterVolume(float value)
+    {
+        MusicPlayer._Instance.MasterVolume(value - 80);
+    }
 }
