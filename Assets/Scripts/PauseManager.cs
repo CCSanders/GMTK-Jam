@@ -26,6 +26,7 @@ public class PauseManager : MonoBehaviour
             if (paused)
             {
                 Time.timeScale = 1;
+                Cursor.visible = false;
                 MainMenuPanel.SetActive(false);
                 OptionsPanel.SetActive(false);
                 paused = false;
@@ -33,6 +34,7 @@ public class PauseManager : MonoBehaviour
             else
             {
                 Time.timeScale = 0;
+                Cursor.visible = true;
                 MainMenuPanel.SetActive(true);
                 paused = true;
             }
@@ -43,6 +45,7 @@ public class PauseManager : MonoBehaviour
     {
         audioSource.PlayOneShot(SelectBlip);
         Time.timeScale = 1;
+        Cursor.visible = false;
         MainMenuPanel.SetActive(false);
         OptionsPanel.SetActive(false);
         paused = false;

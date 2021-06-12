@@ -7,9 +7,14 @@ public class Player : MonoBehaviour
 {
     public Transform crosshair;
     public float moveSpeed = 5.0f;
+    public Transform bulletSpawn;
+    public GameObject bullet;
+    public int ammoCount;
+    public float fireCooldown = .5f;
 
     private Rigidbody2D rigidBody;
     private Vector2 velocity;
+    private float currentCooldown;
 
     private CinemachineVirtualCamera vCam;
 
@@ -18,6 +23,9 @@ public class Player : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
 
         vCam = FindObjectOfType<CinemachineVirtualCamera>();
+
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -60,6 +68,13 @@ public class Player : MonoBehaviour
         {
             transform.Translate(Vector3.right * moveSpeed * Time.deltaTime, Space.World); 
             //rigidBody.MovePosition(transform.position + (Vector3.right * moveSpeed) * Time.deltaTime);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0) && fireCooldown + currentCooldown < Time.time && ammoCount > 0)
+        {
+            Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
+            currentCooldown = Time.time;
+            ammoCount--;
         }
     }
 

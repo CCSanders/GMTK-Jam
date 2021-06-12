@@ -41,9 +41,9 @@ public class Bullet : MonoBehaviour
                 }
                 else
                 {
-                    print("Normal: " + hit.normal + " arcTan: " + Mathf.Rad2Deg * Mathf.Atan2(hit.normal.y, hit.normal.x));
+                    //print("Normal: " + hit.normal + " arcTan: " + Mathf.Rad2Deg * Mathf.Atan2(hit.normal.y, hit.normal.x));
                     Quaternion rot =  Quaternion.Euler(0, 0,  Mathf.Rad2Deg * Mathf.Atan2(hit.normal.y, hit.normal.x));
-                    Instantiate(sparksVFX, transform.position, rot);  
+                    Destroy(Instantiate(sparksVFX, transform.position, rot), .5f);  
                 }
                 Destroy(gameObject);
             }
