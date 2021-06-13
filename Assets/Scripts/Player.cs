@@ -25,7 +25,7 @@ public class Player : MonoBehaviour, IDamageable
     private Rigidbody2D rigidBody;
     private float currentCooldown;
     private bool isMoving = false;
-    private int currentWeapon = 0; //0 is unarmed, 1 is melee, 2 is gun
+    private int currentWeapon = 1; //0 is unarmed, 1 is melee, 2 is gun
     private bool weaponOnRight = true; //false is left
     private SwordHitboxManager swordHitboxManager;
 
@@ -120,6 +120,19 @@ public class Player : MonoBehaviour, IDamageable
         else if (Input.GetKeyDown(KeyCode.Alpha0))
         {
             currentWeapon = 0;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            //if (currentWeapon == 0) currentWeapon = 1;
+            if (currentWeapon == 1)
+            {
+                currentWeapon = 2;
+            }
+            else if (currentWeapon == 2)
+            {
+                currentWeapon = 1;
+            }
         }
 
         animator.SetInteger("weaponIndex", currentWeapon);
