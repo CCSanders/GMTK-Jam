@@ -15684,6 +15684,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1988339030, guid: 263177340185d914597a5825f45fa711, type: 3}
+      propertyPath: m_AmplitudeGain
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988339030, guid: 263177340185d914597a5825f45fa711, type: 3}
+      propertyPath: m_FrequencyGain
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4024549877993671635, guid: 263177340185d914597a5825f45fa711, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -15732,34 +15740,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camera
       objectReference: {fileID: 0}
-    - target: {fileID: 4024549878802171894, guid: 263177340185d914597a5825f45fa711, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.0014155684
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024549878802171894, guid: 263177340185d914597a5825f45fa711, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024549878802171895, guid: 263177340185d914597a5825f45fa711, type: 3}
-      propertyPath: orthographic size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024549879494565945, guid: 263177340185d914597a5825f45fa711, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.0014155684
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024549879494565945, guid: 263177340185d914597a5825f45fa711, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5000001
-      objectReference: {fileID: 0}
     - target: {fileID: 4024549879494565946, guid: 263177340185d914597a5825f45fa711, type: 3}
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 7223273752375000149}
-    - target: {fileID: 4024549879494565946, guid: 263177340185d914597a5825f45fa711, type: 3}
-      propertyPath: m_Lens.OrthographicSize
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 4024549879494565947, guid: 263177340185d914597a5825f45fa711, type: 3}
       propertyPath: m_BoundingShape2D
       value: 
@@ -16022,38 +16006,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 196821423, guid: bcd2d227919f493448c5c05b3ad737f1, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 328293028, guid: bcd2d227919f493448c5c05b3ad737f1, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 738909102, guid: bcd2d227919f493448c5c05b3ad737f1, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1236399771, guid: bcd2d227919f493448c5c05b3ad737f1, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1285585796, guid: bcd2d227919f493448c5c05b3ad737f1, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1288436104, guid: bcd2d227919f493448c5c05b3ad737f1, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1563022862, guid: bcd2d227919f493448c5c05b3ad737f1, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1566971772, guid: bcd2d227919f493448c5c05b3ad737f1, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 1333342358255885726, guid: bcd2d227919f493448c5c05b3ad737f1, type: 3}
       propertyPath: m_Name
       value: Player
@@ -16062,14 +16014,6 @@ PrefabInstance:
       propertyPath: clone
       value: 
       objectReference: {fileID: 1333342357122703873}
-    - target: {fileID: 7223273752375000148, guid: bcd2d227919f493448c5c05b3ad737f1, type: 3}
-      propertyPath: meleeSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 52d9a4b2972ed26428415c7aafd9dc82, type: 3}
-    - target: {fileID: 7223273752375000148, guid: bcd2d227919f493448c5c05b3ad737f1, type: 3}
-      propertyPath: deathAnimation
-      value: 
-      objectReference: {fileID: 1650260069347598754, guid: 9049a4cbce5ddd942866ad5f7675e705, type: 3}
     - target: {fileID: 9071585485369853424, guid: bcd2d227919f493448c5c05b3ad737f1, type: 3}
       propertyPath: m_RootOrder
       value: 2
