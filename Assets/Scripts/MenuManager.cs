@@ -8,6 +8,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] GameObject MainMenuPanel;
     [SerializeField] GameObject OptionsPanel;
     [SerializeField] GameObject CreditsPanel;
+    [SerializeField] GameObject StartPanel;
     [SerializeField] AudioClip SelectBlip;
     [SerializeField] AudioClip HoverBlip;
     AudioSource audio;
@@ -16,6 +17,7 @@ public class MenuManager : MonoBehaviour
     void Start()
     {
         audio = GetComponent<AudioSource>();
+        Cursor.visible = true;
     }
 
     // Update is called once per frame
@@ -27,8 +29,22 @@ public class MenuManager : MonoBehaviour
     public void OnPlay()
     {
         audio.PlayOneShot(SelectBlip);
+        StartPanel.SetActive(true);
+        MainMenuPanel.SetActive(false);
+    }
+
+    public void OnStart()
+    {
+        audio.PlayOneShot(SelectBlip);
         MusicPlayer._Instance.ChangeSong(1);
         SceneManager.LoadScene(1);
+    }
+
+    public void OnReturnToMenu()
+    {
+        audio.PlayOneShot(SelectBlip);
+        MusicPlayer._Instance.ChangeSong(0);
+        SceneManager.LoadScene(0);
     }
 
     public void OnOptions()
