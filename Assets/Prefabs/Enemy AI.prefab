@@ -90,16 +90,18 @@ MonoBehaviour:
   bulletSpawn: {fileID: 7563578988106778718}
   bullet: {fileID: 6597918125054577365, guid: dbff13c1894b4d549988237f43afc960, type: 3}
   deathAnimation: {fileID: 1650260069347598754, guid: 9049a4cbce5ddd942866ad5f7675e705, type: 3}
-  ammoCountMax: 50
-  ammoCount: 50
-  fireCooldown: 0.5
+  ammoCountMax: 30
+  ammoCount: 30
+  fireCooldown: 0.8
   patrolPoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  attackDistance: 8
+  attackDistance: 6
   stopDistance: 3
+  deathShakeIntensity: 2
+  deathShakeTime: 0.3
   fireSound: {fileID: 8300000, guid: 7acd582ca22bb394bb5558d8c927dc9d, type: 3}
   DeathSound: {fileID: 8300000, guid: 0c56924930f1d2c4e8954c334ac3faae, type: 3}
 --- !u!1 &3074198857281896335
