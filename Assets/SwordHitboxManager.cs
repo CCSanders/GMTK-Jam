@@ -46,6 +46,10 @@ public class SwordHitboxManager : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         print("sword collider hit: " + collision.name + " on last frame set: " + lastFrameActivated);
+        if(collision.GetComponent<IDamageable>() != null)
+        {
+            collision.GetComponent<IDamageable>().TakeDamage();
+        }
     }
 
     public void SetCurrentFrameData(Frames current)

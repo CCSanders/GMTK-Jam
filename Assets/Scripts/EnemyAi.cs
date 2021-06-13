@@ -99,7 +99,7 @@ public class EnemyAi : MonoBehaviour, IDamageable
             RaycastHit2D hit = Physics2D.Raycast(bulletSpawn.position, direc, 50, ~mask);
             if (hit.collider != null)
             {
-                //print("Enemy sees " + hit.collider.gameObject);
+                print("Enemy sees " + hit.collider.gameObject);
                 if(hit.collider.GetComponent<Player>() != null)
                 {
                     isPatroling = false;
