@@ -21,19 +21,19 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: -4438850362812005194, guid: 8283845d2b91a4c438ce3b9a1de135bb, type: 3}
-    - time: 0.041666668
+    - time: 0.035714287
       value: {fileID: 1998499645619198801, guid: 8283845d2b91a4c438ce3b9a1de135bb, type: 3}
-    - time: 0.083333336
+    - time: 0.071428575
       value: {fileID: -7298682834295380036, guid: 8283845d2b91a4c438ce3b9a1de135bb, type: 3}
-    - time: 0.125
+    - time: 0.10714286
       value: {fileID: -3884123713292300025, guid: 8283845d2b91a4c438ce3b9a1de135bb, type: 3}
-    - time: 0.16666667
+    - time: 0.14285715
       value: {fileID: -6677443607591109145, guid: 8283845d2b91a4c438ce3b9a1de135bb, type: 3}
     attribute: m_Sprite
     path: Sprite
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 24
+  m_SampleRate: 28
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -58,7 +58,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.20833334
+    m_StopTime: 0.17857143
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -85,28 +85,28 @@ AnimationClip:
     floatParameter: 0
     intParameter: 8
     messageOptions: 0
-  - time: 0.041666668
+  - time: 0.035714287
     functionName: SetCurrentFrameData
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.083333336
+  - time: 0.071428575
     functionName: SetCurrentFrameData
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 1
     messageOptions: 0
-  - time: 0.125
+  - time: 0.10714286
     functionName: SetCurrentFrameData
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 2
     messageOptions: 0
-  - time: 0.16666667
+  - time: 0.14285715
     functionName: SetCurrentFrameData
     data: 
     objectReferenceParameter: {fileID: 0}
