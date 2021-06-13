@@ -14,6 +14,10 @@ public class Player : MonoBehaviour, IDamageable
     public float fireCooldown = .5f;
     public ShadowClone clone;
     public GameObject deathAnimation;
+    public float fireShakeIntensity = 1f;
+    public float fireShakeTime = .5f;
+    public float deathShakeIntensity = 3f;
+    public float deathShakeTime = .5f;
 
     public Animator animator;
     public Animator legsAnimator;
@@ -28,6 +32,7 @@ public class Player : MonoBehaviour, IDamageable
     private int currentWeapon = 0; //0 is unarmed, 1 is melee, 2 is gun
     private bool weaponOnRight = true; //false is left
     private SwordHitboxManager swordHitboxManager;
+    private ScreenShake shake;
 
     private CinemachineVirtualCamera vCam;
 
@@ -40,6 +45,7 @@ public class Player : MonoBehaviour, IDamageable
 
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
+        shake = FindObjectOfType<ScreenShake>();
     }
 
     // Update is called once per frame
@@ -166,6 +172,7 @@ public class Player : MonoBehaviour, IDamageable
 
         MusicPlayer._Instance.PlayOneShot(fireSound);
         animator.SetTrigger("attack");
+        shake.ShakeCamera(fireShakeIntensity, fireShakeTime);
     }
 
     public void SetCurrentFrameData(SwordHitboxManager.Frames current)
@@ -178,6 +185,7 @@ public class Player : MonoBehaviour, IDamageable
         MusicPlayer._Instance.PlayOneShot(DeathSound);
         gameObject.SetActive(false);
         FindObjectOfType<UI>().SetResetText(true);
+        shake.ShakeCamera(deathShakeIntensity, deathShakeTime);
     }
 
     public void ResetPlayer()

@@ -16,6 +16,9 @@ public class EnemyAi : MonoBehaviour, IDamageable
     public float attackDistance = 10f;
     public float stopDistance = 4f;
 
+    public float deathShakeIntensity = 2f;
+    public float deathShakeTime = .3f;
+
     public AudioClip fireSound;
     public AudioClip DeathSound;
 
@@ -26,6 +29,7 @@ public class EnemyAi : MonoBehaviour, IDamageable
     private bool isPatroling = true;
     private Player player;
     private int mask;
+    private ScreenShake shake;
 
     private void Awake()
     {
@@ -33,6 +37,7 @@ public class EnemyAi : MonoBehaviour, IDamageable
         player = FindObjectOfType<Player>();
         mask = 1 << 6;
         ammoCount = ammoCountMax;
+        shake = FindObjectOfType<ScreenShake>();
     }
 
     // Update is called once per frame
@@ -118,6 +123,7 @@ public class EnemyAi : MonoBehaviour, IDamageable
         gameObject.SetActive(false);
         FindObjectOfType<LevelManager>().EnemyKilled();
         MusicPlayer._Instance.PlayOneShot(DeathSound);
+        shake.ShakeCamera(deathShakeIntensity, deathShakeTime);
     }
 
     public void ResetEnemy()
