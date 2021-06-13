@@ -17,6 +17,7 @@ public class Bullet : MonoBehaviour
     {
         mask = 1 << 6;
         lastPoint = transform.position;
+        Destroy(gameObject, 5);
        //LayerMask mask = ~LayerMask.GetMask("Camera Collider");
     }
 
@@ -30,7 +31,7 @@ public class Bullet : MonoBehaviour
         hit = Physics2D.Raycast(lastPoint, lastPointDirection, Vector2.Distance(transform.position, lastPoint), ~mask);
         if (hit.collider != null)
         {
-            print("Hit: " + hit.transform.gameObject);
+            //print("Hit: " + hit.transform.gameObject);
             if (!hit.collider.isTrigger)
             {
                 //print("Hit: " + hit);
