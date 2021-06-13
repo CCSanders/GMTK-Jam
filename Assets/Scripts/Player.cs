@@ -13,11 +13,17 @@ public class Player : MonoBehaviour
     public float fireCooldown = .5f;
     public ShadowClone clone;
 
+    public Animator animator;
+    public Animator legsAnimator;
+
     public AudioClip fireSound;
 
     private Rigidbody2D rigidBody;
     private Vector2 velocity;
     private float currentCooldown;
+    private bool isMoving = false;
+    private int currentWeapon = 0; //0 is unarmed, 1 is melee, 2 is gun
+    private bool weaponOnRight = true; //false is left
 
     private CinemachineVirtualCamera vCam;
 
@@ -36,6 +42,15 @@ public class Player : MonoBehaviour
     {
         HandleRotation();
         HandleMovement();
+
+        if (currentWeapon == 1)
+        {
+            //HandleMelee();
+        }
+        else if (currentWeapon == 2)
+        {
+            //HandleGun()
+        }
     }
 
     private void FixedUpdate()
@@ -49,30 +64,61 @@ public class Player : MonoBehaviour
         //Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         //velocity = input * moveSpeed;
 
+        isMoving = true;
+
         if (Input.GetKey(KeyCode.W))
         {
             transform.Translate(Vector3.up * moveSpeed * Time.deltaTime, Space.World);
+            legsAnimator.gameObject.transform.eulerAngles = new Vector3(0, 0, 90);
             //rigidBody.MovePosition(transform.position + (Vector3.up * moveSpeed) * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.S))
         {
             transform.Translate(Vector3.down * moveSpeed * Time.deltaTime, Space.World);
+            legsAnimator.gameObject.transform.eulerAngles = new Vector3(0, 0, 270);
             //rigidBody.MovePosition(transform.position + (Vector3.down * moveSpeed) * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
             transform.Translate(Vector3.left * moveSpeed * Time.deltaTime, Space.World);
+            legsAnimator.gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
             //rigidBody.MovePosition(transform.position + (Vector3.left * moveSpeed) * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime, Space.World); 
+            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime, Space.World);
+            legsAnimator.gameObject.transform.eulerAngles = new Vector3(0, 0, 180);
             //rigidBody.MovePosition(transform.position + (Vector3.right * moveSpeed) * Time.deltaTime);
         }
 
+        if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
+        {
+            isMoving = false;
+        }
+
+        //weapon switching debug
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            currentWeapon = 1;
+        } 
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            currentWeapon = 2;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            currentWeapon = 0;
+        }
+        
+        //send values to animators
+        animator.SetInteger("weaponIndex", currentWeapon);
+        animator.SetBool("isMoving", isMoving);
+        legsAnimator.SetBool("isMoving", isMoving);
+
+        //weapon firing and abilities
         if (Input.GetKeyDown(KeyCode.Mouse0) && fireCooldown + currentCooldown < Time.time && ammoCount > 0)
         {
             Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
@@ -80,9 +126,13 @@ public class Player : MonoBehaviour
             currentCooldown = Time.time;
             ammoCount--;
             MusicPlayer._Instance.PlayOneShot(fireSound);
+            
+            animator.SetTrigger("attack");
+            animator.SetBool("weaponOnRight", weaponOnRight);
+            weaponOnRight = !weaponOnRight;
         }
 
-        if(Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             clone.EnableClone(transform.position);
         }
@@ -96,6 +146,9 @@ public class Player : MonoBehaviour
 
         float angle = Mathf.Atan2(transform.position.y - mousePosition.y, transform.position.x - mousePosition.x) * Mathf.Rad2Deg;
         //print("Mouse position: " + mousePosition + ", angle: " + angle);
+
+        //set rotation and undo leg rotation with equal and opposite amount
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 90f));
+        legsAnimator.gameObject.transform.rotation = Quaternion.Euler(0.0f, 0.0f, gameObject.transform.rotation.z * -1.0f);
     }
 }
