@@ -70,6 +70,7 @@ public class PauseManager : MonoBehaviour
     {
         audioSource.PlayOneShot(SelectBlip);
         MusicPlayer._Instance.ChangeSong(0);
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
 

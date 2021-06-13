@@ -15480,6 +15480,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4345741344319227382, guid: 1b37aada0b2275846977fad24e9ff3aa, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5400359387636458556, guid: 1b37aada0b2275846977fad24e9ff3aa, type: 3}
       propertyPath: ShadowTime
       value: 5

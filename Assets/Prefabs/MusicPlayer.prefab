@@ -47,7 +47,7 @@ MonoBehaviour:
   songs:
   - {fileID: 8300000, guid: 033619106b2979848a36cdf376c03786, type: 3}
   - {fileID: 8300000, guid: d5776c24cb2925e40b840b5c3bc770b3, type: 3}
-  - {fileID: 8300000, guid: d5776c24cb2925e40b840b5c3bc770b3, type: 3}
+  - {fileID: 8300000, guid: 74fcea911080f884cb223232e9d8a29e, type: 3}
   - {fileID: 8300000, guid: d5776c24cb2925e40b840b5c3bc770b3, type: 3}
   mixer: {fileID: 24100000, guid: 147b7d46fb8d1224083ce2eb152ccc79, type: 2}
 --- !u!82 &7211034935393037522
