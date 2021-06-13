@@ -129,6 +129,7 @@ public class EnemyAi : MonoBehaviour, IDamageable
     public void ResetEnemy()
     {
         isPatroling = true;
+        currentPoint = 0;
         ammoCount = ammoCountMax;
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] GameObject[] enemies;
+    EnemyAi[] enemies;
     [SerializeField] Player player;
     [SerializeField] GameObject nextLevelTrigger;
 
@@ -13,11 +13,11 @@ public class LevelManager : MonoBehaviour
     private Vector3 playerSpawn;
     private int enemiesLeft;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
+        enemies = FindObjectsOfType<EnemyAi>();
         enemyPositions = new Vector3[enemies.Length];
-        for(int x = 0; x < enemies.Length; x++)
+        for (int x = 0; x < enemies.Length; x++)
         {
             enemyPositions[x] = enemies[x].transform.position;
         }
@@ -38,7 +38,7 @@ public class LevelManager : MonoBehaviour
     {
         for (int x = 0; x < enemies.Length; x++)
         {
-            enemies[x].SetActive(true);
+            enemies[x].gameObject.SetActive(true);
             enemies[x].transform.position = enemyPositions[x];
             enemies[x].GetComponent<EnemyAi>().ResetEnemy();
         }
@@ -47,6 +47,7 @@ public class LevelManager : MonoBehaviour
         player.ResetPlayer();
         FindObjectOfType<UI>().SetResetText(false);
         enemiesLeft = enemies.Length;
+        nextLevelTrigger.SetActive(false);
     }
 
     public void EnemyKilled()
