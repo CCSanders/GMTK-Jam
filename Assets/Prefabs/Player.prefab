@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 196821424}
   - component: {fileID: 196821425}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L2R Frame 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   m_Component:
   - component: {fileID: 328293029}
   - component: {fileID: 328293030}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L2R Frame 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 738909103}
   - component: {fileID: 738909104}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R2L Frame 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1236399772}
   - component: {fileID: 1236399773}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R2L Frame 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1285585797}
   - component: {fileID: 1285585798}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R2L Frame 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,7 +311,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1288436105}
   - component: {fileID: 1288436106}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L2R Frame 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -372,7 +372,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1563022863}
   - component: {fileID: 1563022864}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R2L Frame 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,7 +432,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1566971773}
   - component: {fileID: 1566971774}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L2R Frame 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -852,7 +852,11 @@ MonoBehaviour:
   ammoCount: 50
   fireCooldown: 0.1
   clone: {fileID: 0}
-  deathAnimation: {fileID: 0}
+  deathAnimation: {fileID: 1650260069347598754, guid: 9049a4cbce5ddd942866ad5f7675e705, type: 3}
+  fireShakeIntensity: 1
+  fireShakeTime: 0.2
+  deathShakeIntensity: 3
+  deathShakeTime: 0.5
   animator: {fileID: 708471105}
   legsAnimator: {fileID: 1916300536}
   fireSound: {fileID: 8300000, guid: 7acd582ca22bb394bb5558d8c927dc9d, type: 3}
