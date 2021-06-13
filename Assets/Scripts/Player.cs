@@ -19,6 +19,8 @@ public class Player : MonoBehaviour, IDamageable
     public Animator legsAnimator;
 
     public AudioClip fireSound;
+    public AudioClip meleeSound;
+    public AudioClip DeathSound;
 
     private Rigidbody2D rigidBody;
     private float currentCooldown;
@@ -152,6 +154,7 @@ public class Player : MonoBehaviour, IDamageable
         animator.SetTrigger("attack");
         animator.SetBool("weaponOnRight", weaponOnRight);
         weaponOnRight = !weaponOnRight;
+        MusicPlayer._Instance.PlayOneShot(meleeSound);
     }
 
     void FireGun()
@@ -172,6 +175,7 @@ public class Player : MonoBehaviour, IDamageable
     public void TakeDamage()
     {
         Destroy(Instantiate(deathAnimation, transform.position, transform.rotation), 1);
+        MusicPlayer._Instance.PlayOneShot(DeathSound);
         gameObject.SetActive(false);
         FindObjectOfType<UI>().SetResetText(true);
     }

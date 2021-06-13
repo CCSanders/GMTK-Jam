@@ -17,6 +17,7 @@ public class EnemyAi : MonoBehaviour, IDamageable
     public float stopDistance = 4f;
 
     public AudioClip fireSound;
+    public AudioClip DeathSound;
 
     private int currentPoint = 0;
     private Rigidbody2D rigidBody;
@@ -116,6 +117,7 @@ public class EnemyAi : MonoBehaviour, IDamageable
         Instantiate(deathAnimation, transform.position, transform.rotation);
         gameObject.SetActive(false);
         FindObjectOfType<LevelManager>().EnemyKilled();
+        MusicPlayer._Instance.PlayOneShot(DeathSound);
     }
 
     public void ResetEnemy()

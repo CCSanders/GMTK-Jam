@@ -171,6 +171,7 @@ MonoBehaviour:
   bullet: {fileID: 6597918125054577365, guid: dbff13c1894b4d549988237f43afc960, type: 3}
   ShadowTime: 5
   fireSound: {fileID: 8300000, guid: 7acd582ca22bb394bb5558d8c927dc9d, type: 3}
+  cloneSound: {fileID: 8300000, guid: b6b488f99d53fd84e8024007d197cbec, type: 3}
   shadowCurrentCooldown: 5
 --- !u!1 &7885827189746171369
 GameObject:
