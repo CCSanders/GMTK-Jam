@@ -15533,7 +15533,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4024549878802171894, guid: 263177340185d914597a5825f45fa711, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0011340559
+      value: 0.0011324547
       objectReference: {fileID: 0}
     - target: {fileID: 4024549878802171894, guid: 263177340185d914597a5825f45fa711, type: 3}
       propertyPath: m_LocalPosition.y
@@ -15545,7 +15545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4024549879494565945, guid: 263177340185d914597a5825f45fa711, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0011340559
+      value: 0.0011324547
       objectReference: {fileID: 0}
     - target: {fileID: 4024549879494565945, guid: 263177340185d914597a5825f45fa711, type: 3}
       propertyPath: m_LocalPosition.y
@@ -15600,6 +15600,7 @@ MonoBehaviour:
   ChaseMoveSpeed: 5
   bulletSpawn: {fileID: 6913159782692059316}
   bullet: {fileID: 6597918125054577365, guid: dbff13c1894b4d549988237f43afc960, type: 3}
+  deathAnimation: {fileID: 1650260069347598754, guid: 9049a4cbce5ddd942866ad5f7675e705, type: 3}
   ammoCount: 50
   fireCooldown: 0.5
   patrolPoints:
@@ -15949,6 +15950,10 @@ PrefabInstance:
       propertyPath: clone
       value: 
       objectReference: {fileID: 1333342357122703873}
+    - target: {fileID: 7223273752375000148, guid: bcd2d227919f493448c5c05b3ad737f1, type: 3}
+      propertyPath: deathAnimation
+      value: 
+      objectReference: {fileID: 1650260069347598754, guid: 9049a4cbce5ddd942866ad5f7675e705, type: 3}
     - target: {fileID: 9071585485369853424, guid: bcd2d227919f493448c5c05b3ad737f1, type: 3}
       propertyPath: m_RootOrder
       value: 2

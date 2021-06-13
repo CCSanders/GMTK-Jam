@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDamageable
 {
     public Transform crosshair;
     public float moveSpeed = 5.0f;
@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public int ammoCount;
     public float fireCooldown = .5f;
     public ShadowClone clone;
+    public GameObject deathAnimation;
 
     public AudioClip fireSound;
 
@@ -98,4 +99,10 @@ public class Player : MonoBehaviour
         //print("Mouse position: " + mousePosition + ", angle: " + angle);
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 90f));
     }
+    public void TakeDamage()
+    {
+        Destroy(Instantiate(deathAnimation, transform.position, transform.rotation), 1);
+        gameObject.SetActive(false);
+    }
+
 }

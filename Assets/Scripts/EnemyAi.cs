@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAi : MonoBehaviour
+public class EnemyAi : MonoBehaviour, IDamageable
 {
     public float patrolMoveSpeed = 2.0f;
     public float ChaseMoveSpeed = 5.0f;
     public Transform bulletSpawn;
     public GameObject bullet;
+    public GameObject deathAnimation;
     public int ammoCount;
     public float fireCooldown = .5f;
     public Transform[] patrolPoints;
@@ -106,5 +107,11 @@ public class EnemyAi : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void TakeDamage()
+    {
+        Instantiate(deathAnimation, transform.position, transform.rotation);
+        gameObject.SetActive(false);
     }
 }
