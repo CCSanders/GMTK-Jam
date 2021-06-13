@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class UI : MonoBehaviour
 {
     [SerializeField] Text ammoText;
+    [SerializeField] GameObject resetText;
     [SerializeField] Slider cloneSlider;
     [SerializeField] Color activeColor;
     [SerializeField] Color cloneUnavilableColor;
@@ -35,5 +36,10 @@ public class UI : MonoBehaviour
         {
             cloneSlider.fillRect.GetComponent<Image>().color = activeColor;
         }
+    }
+
+    public void SetResetText(bool state)
+    {
+        resetText.SetActive(state);
     }
 }

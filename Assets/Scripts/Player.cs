@@ -9,6 +9,7 @@ public class Player : MonoBehaviour, IDamageable
     public float moveSpeed = 5.0f;
     public Transform bulletSpawn;
     public GameObject bullet;
+    public int ammoMax = 50;
     public int ammoCount;
     public float fireCooldown = .5f;
     public ShadowClone clone;
@@ -172,6 +173,13 @@ public class Player : MonoBehaviour, IDamageable
     {
         Destroy(Instantiate(deathAnimation, transform.position, transform.rotation), 1);
         gameObject.SetActive(false);
+        FindObjectOfType<UI>().SetResetText(true);
+    }
+
+    public void ResetPlayer()
+    {
+        ammoCount = ammoMax;
+        clone.CloneReset();
     }
 
 }

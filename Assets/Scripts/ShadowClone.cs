@@ -22,8 +22,8 @@ public class ShadowClone : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
         rend = GetComponentInChildren<Renderer>();
 
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Confined;
+        //Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -97,5 +97,11 @@ public class ShadowClone : MonoBehaviour
     public bool GetIsActive()
     {
         return isActive;
+    }
+
+    public void CloneReset()
+    {
+        DisableClone();
+        shadowCurrentCooldown = ShadowTime;
     }
 }
