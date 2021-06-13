@@ -9,12 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 11d01af423a3c5544bc493183028445d
   - enabled: 1
+    path: Assets/Scenes/Level-1.unity
+    guid: 06e37c49845b8714c8c9c9e97b958a41
+  - enabled: 1
     path: Assets/Scenes/AndrewSandbox.unity
     guid: 9520b42252f24024c8a649a9587f5232
   - enabled: 1
     path: Assets/Scenes/WinScene.unity
     guid: 641bf3713572b8047b02069cecc4065b
-  - enabled: 1
-    path: Assets/Scenes/Level-1.unity
-    guid: 06e37c49845b8714c8c9c9e97b958a41
   m_configObjects: {}
