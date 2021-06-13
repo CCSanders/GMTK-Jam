@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] GameObject[] enemies;
     [SerializeField] Player player;
+    [SerializeField] GameObject nextLevelTrigger;
 
     private Vector3[] enemyPositions;
     private Vector3 playerSpawn;
+    private int enemiesLeft;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +22,7 @@ public class LevelManager : MonoBehaviour
             enemyPositions[x] = enemies[x].transform.position;
         }
         playerSpawn = player.transform.position;
+        enemiesLeft = enemies.Length;
     }
 
     // Update is called once per frame
@@ -42,5 +46,20 @@ public class LevelManager : MonoBehaviour
         player.transform.position = playerSpawn;
         player.ResetPlayer();
         FindObjectOfType<UI>().SetResetText(false);
+        enemiesLeft = enemies.Length;
+    }
+
+    public void EnemyKilled()
+    {
+        if(--enemiesLeft <= 0)
+        {
+            LevelComplete();
+        }
+    }
+
+    void LevelComplete()
+    {
+        FindObjectOfType<UI>().SetWinText(true);
+        nextLevelTrigger.SetActive(true);
     }
 }
