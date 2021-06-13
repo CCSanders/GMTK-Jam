@@ -16063,6 +16063,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1333342357122703873}
     - target: {fileID: 7223273752375000148, guid: bcd2d227919f493448c5c05b3ad737f1, type: 3}
+      propertyPath: meleeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 52d9a4b2972ed26428415c7aafd9dc82, type: 3}
+    - target: {fileID: 7223273752375000148, guid: bcd2d227919f493448c5c05b3ad737f1, type: 3}
       propertyPath: deathAnimation
       value: 
       objectReference: {fileID: 1650260069347598754, guid: 9049a4cbce5ddd942866ad5f7675e705, type: 3}

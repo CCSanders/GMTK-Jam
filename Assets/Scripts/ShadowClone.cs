@@ -10,6 +10,7 @@ public class ShadowClone : MonoBehaviour
     public float ShadowTime = 5f;
 
     public AudioClip fireSound;
+    public AudioClip cloneSound;
 
     private Rigidbody2D rigidBody;
     private bool isActive = false;
@@ -60,6 +61,7 @@ public class ShadowClone : MonoBehaviour
             transform.position = pos;
             isActive = true;
             rend.enabled = true;
+            MusicPlayer._Instance.PlayOneShot(cloneSound);
         }
     }
 
