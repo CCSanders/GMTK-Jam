@@ -115,6 +115,7 @@ public class EnemyAi : MonoBehaviour, IDamageable
     {
         Instantiate(deathAnimation, transform.position, transform.rotation);
         gameObject.SetActive(false);
+        FindObjectOfType<LevelManager>().EnemyKilled();
     }
 
     public void ResetEnemy()

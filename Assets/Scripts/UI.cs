@@ -7,6 +7,7 @@ public class UI : MonoBehaviour
 {
     [SerializeField] Text ammoText;
     [SerializeField] GameObject resetText;
+    [SerializeField] GameObject winText;
     [SerializeField] Slider cloneSlider;
     [SerializeField] Color activeColor;
     [SerializeField] Color cloneUnavilableColor;
@@ -41,5 +42,10 @@ public class UI : MonoBehaviour
     public void SetResetText(bool state)
     {
         resetText.SetActive(state);
+    }
+
+    public void SetWinText(bool state)
+    {
+        winText.SetActive(state);
     }
 }
