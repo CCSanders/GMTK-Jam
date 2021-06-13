@@ -9,6 +9,7 @@ public class EnemyAi : MonoBehaviour, IDamageable
     public Transform bulletSpawn;
     public GameObject bullet;
     public GameObject deathAnimation;
+    public int ammoCountMax = 50;
     public int ammoCount;
     public float fireCooldown = .5f;
     public Transform[] patrolPoints;
@@ -30,6 +31,7 @@ public class EnemyAi : MonoBehaviour, IDamageable
         rigidBody = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<Player>();
         mask = 1 << 6;
+        ammoCount = ammoCountMax;
     }
 
     // Update is called once per frame
@@ -113,5 +115,11 @@ public class EnemyAi : MonoBehaviour, IDamageable
     {
         Instantiate(deathAnimation, transform.position, transform.rotation);
         gameObject.SetActive(false);
+    }
+
+    public void ResetEnemy()
+    {
+        isPatroling = true;
+        ammoCount = ammoCountMax;
     }
 }
